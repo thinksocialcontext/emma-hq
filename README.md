@@ -17,7 +17,7 @@ Built for you by ThinkSocial.
 * **Memory** (`memory/`). Facts and rules every agent reads at the start of every session: your story, your offers, the claims you can make, your customers' words, your brand look. Agents add to it when you teach them something. See `docs/memory.md`.
 * **A work ledger** (`scripts/ledger`). A record of every job: who did it, what was asked, what came out. See `docs/ledger.md`.
 * **Loops** (`docs/loops.md`). The weekly ad batch, the social week, inbox triage and a Friday report, each started with one command.
-* **A dashboard** (`scripts/dashboard.py`). One page showing what is waiting on you, what each agent is doing, ad spend and ROAS, store sales and recent work. See `docs/dashboard.md`.
+* **A dashboard** (`scripts/dashboard.py`). What is waiting on you, what each agent is doing, store sales and recent work, plus the ads desk: a countdown to your weekly launch, an ads tracker with break even and kill switch flags, F.O.C.U.S. coverage, a gallery of every ad batch, and your memories. Works on a phone. See `docs/dashboard.md`.
 
 ![The Emma HQ dashboard](docs/dashboard.png)
 
@@ -71,9 +71,9 @@ Open a new Ubuntu window and run `claude` once. Sign in with your Claude account
 
 Each one is optional. Start with none and add them as you go.
 
-* **Shopify:** in Claude Code, add the Shopify connector, or create a custom app in Shopify (Settings, Apps and sales channels, Develop apps) with **read** scopes and put its token in `.env`.
+* **Shopify:** in Claude Code, add the Shopify connector, or create a custom app in Shopify with **read** scopes and put its token in `.env`. Step by step: `docs/connect-shopify.md`.
 * **Email:** add the Gmail (or Outlook) connector in Claude Code. The email agent only reads and makes drafts.
-* **Meta ads numbers:** a read only token in `.env`, or export a report and ask the ads agent to load it.
+* **Meta ads numbers:** see **`docs/connect-meta.md`**. Three routes: export a CSV from Ads Manager (no setup, good for day one), a Meta app with a read only token in `.env` (recommended: the ads agent then refreshes the numbers by itself), or a read only Meta Ads connector in Claude Code. Test a token with `python3 ads/tools/meta_pull.py --check`.
 * **Klaviyo:** a private key with read scopes in `.env`.
 
 Keys only ever go in `.env`. Never paste a key into a chat with an agent.
@@ -157,6 +157,7 @@ Agents can keep running. To close them all (tmux): `scripts/hq stop`. With herdr
 * `docs/ledger.md` the work record
 * `docs/loops.md` the repeating jobs
 * `docs/dashboard.md` the dashboard and its numbers
+* `docs/connect-meta.md` and `docs/connect-shopify.md` connecting your ad account and store
 * `docs/herdr-and-tmux.md` how the agents run side by side
 * `tests/run.sh` the self tests (`bash tests/run.sh`)
 

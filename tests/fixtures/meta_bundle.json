@@ -1,0 +1,33 @@
+{
+  "note": "A recorded Graph API response bundle with made up numbers and ids, shaped like the real insights and ads edges.",
+  "insights": {
+    "data": [
+      {"ad_id": "120000000000000001", "ad_name": "O | Wear earrings again, review card", "adset_name": "2026-10-07 batch",
+       "campaign_name": "Prospecting", "spend": "420.00", "impressions": "21000", "inline_link_clicks": "441",
+       "inline_link_click_ctr": "2.1", "ctr": "2.6",
+       "actions": [{"action_type": "link_click", "value": "441"}, {"action_type": "purchase", "value": "21"},
+                   {"action_type": "omni_purchase", "value": "21"}, {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "21"}],
+       "action_values": [{"action_type": "omni_purchase", "value": "1010.00"}, {"action_type": "purchase", "value": "1010.00"}],
+       "date_start": "2026-09-30", "date_stop": "2026-10-29"},
+      {"ad_id": "120000000000000002", "ad_name": "[S] Titanium still itched", "adset_name": "2026-10-07 batch",
+       "spend": "310.50", "inline_link_click_ctr": "1.7",
+       "actions": [{"action_type": "purchase", "value": "12"}],
+       "action_values": [{"action_type": "purchase", "value": "560.00"}]},
+      {"ad_id": "120000000000000003", "ad_name": "Holiday stack video", "adset_name": "2026-10-21",
+       "spend": "95.00", "ctr": "0.9"},
+      {"ad_id": "120000000000000004", "ad_name": "U | Never spent", "adset_name": "2026-10-28", "spend": "0"}
+    ],
+    "paging": {"cursors": {"before": "a", "after": "b"}}
+  },
+  "ads": {
+    "data": [
+      {"id": "120000000000000001", "name": "O | Wear earrings again, review card", "effective_status": "ACTIVE",
+       "created_time": "2026-10-07T10:00:00-0500", "adset": {"name": "2026-10-07 batch"}, "creative": {"object_type": "SHARE"}},
+      {"id": "120000000000000002", "name": "[S] Titanium still itched", "effective_status": "PAUSED",
+       "created_time": "2026-10-07T10:00:00-0500", "adset": {"name": "2026-10-07 batch"}, "creative": {"object_type": "PHOTO"}},
+      {"id": "120000000000000003", "name": "Holiday stack video", "effective_status": "ACTIVE",
+       "created_time": "2026-10-21T10:00:00-0500", "adset": {"name": "2026-10-21"}, "creative": {"object_type": "VIDEO", "video_id": "9"}}
+    ]
+  },
+  "account_7d": {"data": [{"spend": "350.00", "action_values": [{"action_type": "omni_purchase", "value": "910.00"}]}]}
+}

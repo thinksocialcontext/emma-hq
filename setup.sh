@@ -84,7 +84,7 @@ else echo "  .env already exists. Left alone."; fi
 if [[ ! -f memory/MEMORY.md ]]; then mkdir -p memory && cp -n memory-seed/*.md memory/ && echo "  Copied the starter memories into memory/."
 else echo "  memory/ already set up. Left alone."; fi
 mkdir -p "${FOLDERS[@]}"
-chmod +x scripts/hq scripts/ledger scripts/dashboard.py tests/*.sh 2>/dev/null
+chmod +x scripts/hq scripts/ledger scripts/dashboard.py ads/tools/meta_pull.py tests/*.sh 2>/dev/null
 echo "  Folders ready: ${FOLDERS[*]}"
 
 bold "8. Brand fonts for ad stills (Fjalla One and Poppins, free Google Fonts)"

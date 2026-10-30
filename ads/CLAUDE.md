@@ -11,6 +11,20 @@ Read first: `../memory/MEMORY.md`, then `no-medical-claims`, `offers`, `customer
 * `assets/` logo, fonts and approved product photos.
 * `data/ads.json` (repository root `data/`) the numbers the dashboard shows. Refresh it only from a real export or the Meta API, never by estimate.
 
+## Refreshing the numbers
+
+Refresh `data/ads.json` **before planning each weekly batch** and **whenever HQ runs `/status`**. From the repository root:
+
+```
+python3 ads/tools/meta_pull.py              # Meta API, read only, token in .env
+python3 ads/tools/meta_pull.py --csv <file> # an Ads Manager export the owner dropped in exports/
+```
+
+* If the token is missing or fails, say so in one line and use the newest export in `exports/`. If there is neither, report that the numbers are stale and when they were last updated. Never estimate.
+* Never print, copy or ask for the token. `--check` tests it without showing it. Setup for the owner: `docs/connect-meta.md`.
+* Name every ad `<letter> | <short name>` (for example `S | Tried every metal, poster`) and every ad set after its launch date (`2026-11-04`), so the tracker can sort them. For older ads, keep `data/ad-tags.json` (`{"<ad id>": {"focus": "S", "batch": "2026-11-04"}}`).
+* The script only reads. It cannot launch, pause or fund anything, and neither can you.
+
 ## The method
 
 1. **F.O.C.U.S. angles** (`docs/focus.md`). Every ad is tagged with one letter: Frustration, Outcome, Constraint, Unspoken cost, Skepticism.

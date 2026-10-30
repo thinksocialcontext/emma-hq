@@ -4,6 +4,7 @@
 !.env.example
 
 # business data that stays on this computer
+exports/
 memory/
 work/
 data/*.json

@@ -1,7 +1,9 @@
 {
-  "note": "SAMPLE. Copy to data/kpi.json and fill in real averages from Shopify. Break even ROAS = average order value / (average order value minus cost per order).",
+  "note": "SAMPLE. Copy to data/kpi.json and fill in real averages from Shopify. Break even ROAS = average order value / (average order value minus cost per order). Target is 25% better (target_uplift 1.25). The launch block sets the weekly launch countdown in your own time zone.",
   "average_order_value": 40.00,
   "product_cost_per_order": 8.00,
   "shipping_cost_per_order": 5.00,
-  "fees_per_order": 1.50
+  "fees_per_order": 1.50,
+  "target_uplift": 1.25,
+  "launch": {"day": "Wednesday", "time": "10:00", "timezone": "America/Chicago"}
 }

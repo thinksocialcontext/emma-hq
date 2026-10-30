@@ -11,6 +11,7 @@ The numbers that come back in `data/` feed the next round of research.
 | Loop | Rhythm | Command | Who | Ends at |
 | --- | --- | --- | --- | --- |
 | Research to concepts | when a new angle or product needs it | ask HQ | ads-research, then ads | concepts saved, owner picks |
+| Ad numbers | before each weekly batch and on every `/status` | `ads/tools/meta_pull.py` | ads | `data/ads.json` refreshed |
 | Weekly ad batch | once a week, fixed launch day | `/batch` then `/rate` | ads | `approvals/<date>-ad-batch.md` |
 | Social week | once a week | `/social-week` | social | `approvals/<date>-social-week.md` |
 | Inbox triage | daily or twice daily | `/triage` | email | drafts waiting in the mail tool |
@@ -26,9 +27,13 @@ The numbers that come back in `data/` feed the next round of research.
 4. HQ hands the pick to ads and asks for concepts.
 5. HQ returns the concepts to the owner with the file path, and asks before anything is built further, published or launched.
 
+## Ad numbers
+
+Before planning each weekly batch, and every time HQ runs `/status`, the ads agent refreshes `data/ads.json` with `python3 ads/tools/meta_pull.py` (read only, token in `.env`), or with `--csv` from the newest Ads Manager export in `exports/` when there is no token. If neither works it reports the numbers as stale instead of guessing. The dashboard's Weekly launch, Ads tracker and F.O.C.U.S. pages read this file. Setup: `docs/connect-meta.md`.
+
 ## Weekly ad batch
 
-See `ads/docs/weekly-batch.md`. Plan from the numbers, one testing focus, build stills with zero credits, critic gate, diversity rating, approval file. The kill switch for a losing ad is a proposal, never an action.
+See `ads/docs/weekly-batch.md`. It starts with the numbers refresh above. Plan from the numbers, one testing focus, build stills with zero credits, critic gate, diversity rating, approval file. The kill switch for a losing ad is a proposal, never an action.
 
 ## Social week
 

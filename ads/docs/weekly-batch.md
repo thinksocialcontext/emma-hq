@@ -9,7 +9,7 @@ A small steady rhythm beats a big irregular push.
 
 ## The loop (also `/batch`)
 
-1. **Read the numbers.** `data/ads.json`: what spent, what won, which F.O.C.U.S. letter is short.
+1. **Refresh and read the numbers.** Run `python3 ads/tools/meta_pull.py` (or `--csv` with the owner's export), then read `data/ads.json`, or the dashboard's Weekly launch page: what spent, what won, which F.O.C.U.S. letter is short, how many new ads the spend calls for.
 2. **Draft the experiment card** in `batches/<date>/plan.md`: the focus, the hypothesis, the ads, the budget to ask for.
 3. **Write `copy.json`** with every string, letter, persona and the reason each ad should win.
 4. **Build** with `python3 tools/build_stills.py batches/<date>`.
