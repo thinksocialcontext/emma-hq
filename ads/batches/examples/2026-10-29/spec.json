@@ -1,0 +1,437 @@
+{
+  "batch": "2026-10-29",
+  "status": "Sample concepts made by ThinkSocial on 29 Oct 2026. Not live, not posted.",
+  "brand": {
+    "name": "Earrings by Emma",
+    "link_root": "https://earringsbyemma.com",
+    "logo": "assets/logo/logo.svg",
+    "colors": {
+      "pink": "#FD0082",
+      "teal": "#2FBAD1",
+      "purple": "#5E106B",
+      "lav": "#8B85C1",
+      "cream": "#FEFCE8",
+      "ink": "#231A2B"
+    }
+  },
+  "price_note": "Regular prices from products.json compare at prices. The 15% Halloween sale is temporary and is not quoted.",
+  "ads": [
+    {
+      "id": "EE01",
+      "file": "EE01-tried-everything-notepad",
+      "layout": "notepad",
+      "format": "pp02",
+      "focus": "F",
+      "persona": "Metal allergy sufferer who has tried every fix",
+      "link": "https://earringsbyemma.com/pages/earrings-for-sensitive-ears",
+      "photos": [
+        "assets/photos/clear-posts.jpg"
+      ],
+      "colors": {
+        "ground": "#EDEAF7",
+        "dots": "#D9D4EE",
+        "pad": "white",
+        "pad_lines": "#BFE6EF",
+        "hand": "#3A3340"
+      },
+      "on_image": {
+        "kicker": "Things I tried for my ears",
+        "crossed": [
+          "Titanium",
+          "Surgical steel",
+          "Nickel free posts",
+          "Clear nail polish trick",
+          "14k gold"
+        ],
+        "final": "No metal in the ear",
+        "title": "Tried everything?\nTry no metal.",
+        "photo_caption": "Clear plastic posts",
+        "footer": "Plastic posts. No metal touching the ear."
+      },
+      "headline": "Tried everything? Try no metal.",
+      "primary_text": "Titanium. Surgical steel. Nickel free posts. The clear nail polish trick. If your ears still end up red and itchy by dinner, the answer might not be a better metal. Every Earrings by Emma post and hook is plastic, so there is no metal touching the ear. Hundreds of styles, family owned in Oklahoma.",
+      "description": "Plastic posts for sensitive ears",
+      "why": "The list mirrors what reviewers actually tried (Heather, Trisha J., Stephanie N.). Naming the failed fixes earns the right to offer the new one."
+    },
+    {
+      "id": "EE02",
+      "file": "EE02-thirty-years-quote-poster",
+      "layout": "quote_poster",
+      "format": "pr02",
+      "focus": "O",
+      "persona": "Someone who gave up on earrings years ago",
+      "link": "https://earringsbyemma.com/products/faux-pearl-earrings",
+      "photos": [
+        "assets/photos/faux-pearl-lifestyle2.jpg"
+      ],
+      "colors": {
+        "ground": "#FD0082",
+        "type": "white",
+        "rule": "#2FBAD1",
+        "quote_mark": "#FFFFFF55"
+      },
+      "on_image": {
+        "big": "For the first time in 30 years,",
+        "big2": "I can wear pierced earrings again.",
+        "attribution": "Karen D., verified review of the Faux Pearl Studs, earringsbyemma.com",
+        "footer": "Faux Pearl Studs  $16",
+        "photo_caption": "Faux Pearl Studs, listing photo"
+      },
+      "headline": "For the first time in 30 years.",
+      "primary_text": "\"For the first time in 30 years, I can wear pierced earrings again. There aren't enough words to express my thanks and joy!\" Karen D., Faux Pearl Studs. Plastic posts, no metal touching the ear, and a 2 year warranty. Your ears can have earrings again.",
+      "description": "Faux Pearl Studs, $16",
+      "why": "The single most common story in her reviews is years without earrings. A real customer saying it beats the brand saying it."
+    },
+    {
+      "id": "EE03",
+      "file": "EE03-risk-free-certificate",
+      "layout": "certificate",
+      "format": "pr03",
+      "focus": "S",
+      "persona": "Nervous first timer whose ears have been let down before",
+      "link": "https://earringsbyemma.com/pages/refund-policy",
+      "photos": [
+        "assets/photos/petite-diamond-6mm.png"
+      ],
+      "colors": {
+        "ground": "#8B85C1",
+        "paper": "#FEFCE8",
+        "seal_color": "#2FBAD1",
+        "stamp_color": "#FD0082"
+      },
+      "on_image": {
+        "kicker": "THE SENSITIVE EARS PROMISE",
+        "title": "Try two pairs.\nRisk free.",
+        "body": "If they cause irritation, we refund the cost of up to 2 worn pairs. Please do not return worn earrings. Just email us the names.",
+        "stamp": [
+          "2 PAIRS",
+          "RISK FREE"
+        ],
+        "seal": [
+          "2 YEAR",
+          "WARRANTY"
+        ],
+        "sign": "From our refund policy",
+        "footer": "Petite Faux Diamond CZ Studs  $25"
+      },
+      "headline": "Try two pairs. Risk free.",
+      "primary_text": "We know sensitive ears are no joke. If our plastic posts cause irritation, we refund the cost of up to 2 worn pairs. No need to mail them back, just email us the names. Every pair also carries a 2 year warranty. Family owned in Oklahoma.",
+      "description": "Risk free for sensitive ears",
+      "why": "Her refund policy already removes the risk, but it lives on a policy page. Putting it on the ad answers the skeptic who has wasted money on hypoallergenic pairs before."
+    },
+    {
+      "id": "EE04",
+      "file": "EE04-school-notebook",
+      "layout": "notebook",
+      "format": "pp08",
+      "focus": "C",
+      "persona": "Parent of a child with sensitive ears",
+      "link": "https://earringsbyemma.com/collections/kids-earrings",
+      "photos": [
+        "assets/photos/soccer-ball-photo.jpg",
+        "assets/photos/soccer-ball-studs.jpg"
+      ],
+      "colors": {
+        "page": "#FFFEF8",
+        "page_lines": "#9FD9E6",
+        "sticky": "#FFC3E2",
+        "hand": "#2F2A36",
+        "marble_dark": "#141414",
+        "marble_light": "#F2F2F2"
+      },
+      "on_image": {
+        "title": "Cute enough for her.\nMade for her ears.",
+        "lines": [
+          "Plastic posts, no metal touching the ear",
+          "Two sets of backs in every stud pair",
+          "Flexible hooks should thread out if pulled"
+        ],
+        "quote": "\"My daughter and I both have to use plastic posts. It's hard to find them and when I do they are boring.\"",
+        "quote_by": "Ashlee J., Soccer Ball Studs",
+        "note": "Not for little ones or new piercings",
+        "footer": "Kids styles from $14",
+        "photo_caption": "Soccer Ball Studs, listing photo"
+      },
+      "headline": "Cute enough for her. Made for her ears.",
+      "primary_text": "When metal earrings make her lobes angry, you are stuck choosing between cute and comfortable. Our plastic posts and hooks have no metal touching the ear, studs come with two sets of backs, and the flexible hooks should thread out if they get caught. Best for older kids with healed piercings.",
+      "description": "Kids earrings for sensitive ears",
+      "why": "Parents are a core buyer in her reviews (Jessy, Tina R., Ashlee J.). The notebook frame says school without a word, and the safety note keeps the ad as careful as her own site."
+    },
+    {
+      "id": "EE05",
+      "file": "EE05-gold-workaround-receipt",
+      "layout": "receipt",
+      "format": "pp03",
+      "focus": "U",
+      "persona": "Sensitive ear shopper who only tolerates real gold",
+      "link": "https://earringsbyemma.com/products/faux-pearl-earrings",
+      "photos": [
+        "assets/photos/faux-pearl-12mm.jpg"
+      ],
+      "colors": {
+        "ground": "#2FBAD1",
+        "paper": "#FCFBF7",
+        "receipt_ink": "#222222",
+        "receipt_grey": "#555555",
+        "title_color": "white",
+        "footer_color": "white"
+      },
+      "on_image": {
+        "title": "Sensitive ears\nshouldn't cost gold.",
+        "receipt_head": [
+          "THE GOLD WORKAROUND",
+          "a receipt"
+        ],
+        "rows": [
+          [
+            "14K GOLD STUDS",
+            "$50 TO $200+"
+          ],
+          [
+            "LOST A PAIR SWIMMING",
+            "REPLACE IT?"
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "FAUX PEARL STUDS",
+            "$16"
+          ],
+          [
+            "PLASTIC POSTS",
+            "NO METAL"
+          ],
+          [
+            "BUY 3",
+            "GET 1 FREE"
+          ]
+        ],
+        "foot": "How Emma started: a gold pair, lost swimming.",
+        "footer": "Gold price range quoted from earringsbyemma.com"
+      },
+      "headline": "Sensitive ears shouldn't cost gold.",
+      "primary_text": "Gold is one of the few metals many sensitive ears tolerate, and a pair of 14k studs can easily cost $50 to $200 or more. Emma's family learned that the hard way when she lost a gold pair swimming, and they didn't want to keep buying gold earrings. So they started making plastic post earrings instead. Faux Pearl Studs are $16, and you get a fourth pair free when you buy 3.",
+      "description": "Faux Pearl Studs, $16",
+      "why": "The hidden cost of sensitive ears is paying gold prices for everyday earrings. The receipt makes the math visible and ties it to the true founding story."
+    },
+    {
+      "id": "EE06",
+      "file": "EE06-stud-display-board",
+      "layout": "display_board",
+      "format": "cd04",
+      "focus": "O",
+      "persona": "Collector who wants a pair for every outfit",
+      "link": "https://earringsbyemma.com/collections/best-sellers",
+      "photos": [
+        "assets/photos/petite-diamond-6mm.png",
+        "assets/photos/faux-pearl-12mm.jpg",
+        "assets/photos/gold-rimmed-glitter-silver.jpg",
+        "assets/photos/diamond-cut-rhinestone.jpg",
+        "assets/photos/glassy-butterfly.jpg",
+        "assets/photos/gummy-bear-studs-purple.jpg"
+      ],
+      "colors": {
+        "ground": "#5E106B",
+        "holes": "#4A0C55",
+        "card": "white",
+        "footer_color": "#E7DDF0",
+        "offer_bg": "#FD0082"
+      },
+      "on_image": {
+        "title": "A pair for every plan.",
+        "cards": [
+          [
+            "Petite Faux Diamond",
+            "$25"
+          ],
+          [
+            "Faux Pearl",
+            "$16"
+          ],
+          [
+            "Gold Rimmed Glitter",
+            "$15"
+          ],
+          [
+            "Diamond Cut",
+            "$15"
+          ],
+          [
+            "Glassy Butterfly",
+            "$14"
+          ],
+          [
+            "Gummy Bear",
+            "$14"
+          ]
+        ],
+        "offer": "Buy 3, get 1 free",
+        "offer2": "Free shipping at 5 pairs",
+        "footer": "Every post and hook is plastic"
+      },
+      "headline": "A pair for every plan.",
+      "primary_text": "Date night, errands, game day, the classroom. Sensitive ears don't have to mean one boring pair. Hundreds of styles, and every post and hook is plastic. Buy 3, get 1 free, and shipping is free at 5 pairs.",
+      "description": "Buy 3, get 1 free",
+      "why": "Reviewers say don't buy just one (Carey M.) and talk about growing collections. Showing the range on display cards sells the second, third and fourth pair."
+    },
+    {
+      "id": "EE07",
+      "file": "EE07-rehook-annotated",
+      "layout": "annotated",
+      "format": "pp11",
+      "focus": "U",
+      "persona": "Woman with a drawer of earrings she can't wear",
+      "link": "https://earringsbyemma.com/products/hypoallergenic-clear-plastic-hook-earrings",
+      "photos": [
+        "assets/photos/clear-hooks-large.jpg"
+      ],
+      "colors": {
+        "ground": "#FFE6F3",
+        "note_color": "#5E106B",
+        "sticker": "#FD0082",
+        "quote_bar": "#2FBAD1"
+      },
+      "on_image": {
+        "title": "That drawer of earrings\nyou stopped wearing?",
+        "sub": "Swap the hooks.",
+        "notes": [
+          "clear plastic,\nno metal",
+          "the curve holds it,\nno backs needed",
+          "5 pairs for $5"
+        ],
+        "quote": "\"I have really enjoyed changing my existing, unwearable earrings into earrings I can use again.\"",
+        "quote_by": "Jennifer S., Clear Plastic Hook Blanks",
+        "footer": "Clear Plastic Hook Blanks"
+      },
+      "headline": "Bring your old favorites back.",
+      "primary_text": "You already paid for those earrings. Your ears just won't wear them. Our clear plastic hooks come 5 pairs for $5, so you can swap the metal hooks on the pairs you love and wear them again. No backs needed, the curve keeps them snug.",
+      "description": "5 pairs of clear plastic hooks, $5",
+      "why": "The unspoken cost is the jewellery box full of money you can't wear. A $5 fix is an easy first order that introduces the brand."
+    },
+    {
+      "id": "EE08",
+      "file": "EE08-gift-tag",
+      "layout": "gift_tag",
+      "format": "pp05",
+      "focus": "C",
+      "persona": "Gift buyer for someone with sensitive ears",
+      "link": "https://earringsbyemma.com/products/digital-gift-card",
+      "photos": [
+        "assets/photos/glassy-butterfly.jpg",
+        "assets/photos/moon-cats.jpg"
+      ],
+      "colors": {
+        "ground": "#C49A6C",
+        "fibres": "#6B4A2A40",
+        "ribbon": "#FD0082",
+        "tag": "#FFFBF4",
+        "tag_line": "#8B85C1",
+        "string": "#F4E6D2",
+        "band": "#5E106B"
+      },
+      "on_image": {
+        "kicker": "Shopping for sensitive ears?",
+        "title": "Let them pick.",
+        "sub": "Digital gift cards from $25,\nemailed, no expiration date",
+        "footer": "Every post and hook is plastic"
+      },
+      "headline": "Shopping for sensitive ears? Let them pick.",
+      "primary_text": "Buying earrings for someone whose ears react to metal feels like a gamble. Take the guesswork out. Every Earrings by Emma post and hook is plastic, and our digital gift card arrives by email with no expiration date, so they choose from hundreds of styles.",
+      "description": "Digital gift cards, $25 to $200",
+      "why": "Gift buyers face two constraints, the metal and the taste. The gift card solves both and her own listing already says it: let them pick."
+    },
+    {
+      "id": "EE09",
+      "file": "EE09-teacher-chalkboard",
+      "layout": "chalkboard",
+      "format": "pp09",
+      "focus": "F",
+      "persona": "Teacher on her feet all day",
+      "link": "https://earringsbyemma.com/collections/school-earrings",
+      "photos": [
+        "assets/photos/bendy-pencil-photo.jpg",
+        "assets/photos/bendy-pencil.jpg"
+      ],
+      "colors": {
+        "frame": "#9A6B3E",
+        "board": "#26332D",
+        "tray": "#7A512C",
+        "chalk": "#F4F4EE",
+        "chalk_blue": "#9EE3F0",
+        "chalk_pink": "#FFD1E9",
+        "chalk_grey": "#E6E6DD",
+        "underline": "#FD0082"
+      },
+      "on_image": {
+        "title": "Ears sore\nby lunch?",
+        "sub": "Plastic hooks.\nNo metal in the ear.",
+        "quote": "\"I'm a teacher, and these are my fave!\"",
+        "quote_by": "Shelly H., Bendy Pencil Dangles",
+        "footer": "Exaggerated Bendy Pencil Dangles  $15",
+        "photo_caption": "Bendy Pencil Dangles, listing photo"
+      },
+      "headline": "Ears sore by lunch?",
+      "primary_text": "If your earrings come out before the last bell, try a pair with no metal in the ear. Every post and hook we make is plastic. Our Bendy Pencil Dangles fit right in at school, and we have a whole school collection.",
+      "description": "Bendy Pencil Dangles, $15",
+      "why": "Teacher earrings are one of her biggest niches (70 products). The chalkboard calls out the persona instantly and the quote is a real teacher."
+    },
+    {
+      "id": "EE10",
+      "file": "EE10-plastic-spec-sheet",
+      "layout": "spec_sheet",
+      "format": "cd03",
+      "focus": "S",
+      "persona": "Skeptic who thinks plastic means cheap",
+      "link": "https://earringsbyemma.com/pages/plastic-post-earrings",
+      "photos": [
+        "assets/photos/infinity-loops.jpg"
+      ],
+      "colors": {
+        "ground": "white",
+        "grid": "#2FBAD126",
+        "row_tint": "#EAF8FB",
+        "quote_bg": "#FFE6F3"
+      },
+      "on_image": {
+        "kicker": "MATERIAL SPEC",
+        "title": "Plastic? Yes.\nCheap? No.",
+        "rows": [
+          [
+            "POST AND HOOK",
+            "Polycarbonate, no metal"
+          ],
+          [
+            "ALSO USED IN",
+            "Safety goggles, helmets"
+          ],
+          [
+            "LATEX FREE",
+            "Posts, hooks and backs"
+          ],
+          [
+            "HOOKS",
+            "Flexible, no backs needed"
+          ],
+          [
+            "WARRANTY",
+            "2 years"
+          ],
+          [
+            "ASSEMBLED",
+            "Most pairs by hand, Oklahoma"
+          ]
+        ],
+        "quote": "\"...these don't look 'cheap' or childish even if the posts are plastic.\"",
+        "quote_by": "Heather, Lonoke, AR, on plastic posts",
+        "footer": "Infinity Loops Dangles  $16",
+        "figure": "FIG. 1  Infinity Loops, plastic hooks"
+      },
+      "headline": "Plastic? Yes. Cheap? No.",
+      "primary_text": "Our posts and hooks are polycarbonate, the same material used in safety goggles and motorcycle helmets. Strong, light, and no metal touching the ear. Family owned in Oklahoma, with most pairs assembled by hand, and every pair backed by a 2 year warranty.",
+      "description": "Infinity Loops Dangles, $16",
+      "why": "The biggest doubt about plastic posts is that they look and feel cheap. A spec sheet answers with her own facts, and a real customer says the rest."
+    }
+  ]
+}

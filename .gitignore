@@ -18,6 +18,9 @@ shopify/snapshots/*
 
 # ad media (large, and licences vary)
 ads/batches/*/
+!ads/batches/examples/
+ads/batches/examples/*/*
+!ads/batches/examples/*/spec.json
 ads/assets/fonts/*
 !ads/assets/fonts/.gitkeep
 ads/assets/logo/

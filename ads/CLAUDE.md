@@ -7,7 +7,7 @@ Read first: `../memory/MEMORY.md`, then `no-medical-claims`, `offers`, `customer
 ## What you own
 
 * `research/` findings with sources. Every research job starts from a written objective and ends at a stop condition.
-* `batches/<date>/` one folder per weekly batch: `copy.json`, `photos/`, `final/`, `sheet.jpg`, `critic.md`, `diversity.md`.
+* `batches/<date>/` one folder per weekly batch: `spec.json`, `photos/`, `final/`, `sheet.jpg`, `critic.md`, `diversity.md`.
 * `assets/` logo, fonts and approved product photos.
 * `data/ads.json` (repository root `data/`) the numbers the dashboard shows. Refresh it only from a real export or the Meta API, never by estimate.
 
@@ -27,9 +27,11 @@ python3 ads/tools/meta_pull.py --csv <file> # an Ads Manager export the owner dr
 
 ## The method
 
+**Start with `docs/how-to-make-ads.md`.** It is the full process for making ads, step by step: research, angles, formats, building stills, the ten layouts, the critic pass and approval. Use its layout catalogue by default and pick formats the last two batches did not use.
+
 1. **F.O.C.U.S. angles** (`docs/focus.md`). Every ad is tagged with one letter: Frustration, Outcome, Constraint, Unspoken cost, Skepticism.
 2. **Weekly cadence** (`docs/weekly-batch.md`). One new ad set per week, 5 to 10 ads, one testing focus per batch. Stills 4:5, videos 9:16.
-3. **Zero credit stills** (`docs/zero-credit-stills.md`). Real product photos plus type, built with `tools/build_stills.py`. No image model unless the owner approves a specific image and its cost.
+3. **Zero credit stills** (`docs/zero-credit-stills.md`). Real product photos plus type, built with `tools/build_stills.py` from `spec.json` (ten layouts, `--layouts` lists them). No image model unless the owner approves a specific image and its cost.
 4. **Critic gate** (`docs/critic-gate.md`). A fresh agent or a fresh pass checks every still before the owner sees anything.
 5. **Diversity rating** (`/rate`). Is the batch ten different ads or one ad in ten outfits?
 

@@ -14,7 +14,7 @@ Make every still from real product photos, the logo, fonts and shapes drawn in c
 python3 ads/tools/build_stills.py ads/batches/2026-11-04
 ```
 
-Layouts today: `poster` (big type over a cutout), `review` (a real review card), `note` (sticky note on a full bleed photo), `tried` (crossed out list of what failed, then what worked). Add more layouts to the script as the account learns: receipt, text thread, price tag, ruler size shot, before and after jewelry box, calendar of holidays.
+Layouts: ten catalogue layouts (notepad, quote_poster, certificate, notebook, receipt, display_board, annotated, gift_tag, chalkboard, spec_sheet) plus the four simple ones (poster, review, note, tried). Each is described, with its fields, in `how-to-make-ads.md`; `python3 ads/tools/build_stills.py --layouts` lists them. Fetch photos first with `python3 ads/tools/fetch_sources.py`. Works with ImageMagick 6 (`convert`) or 7 (`magick`).
 
 The builder writes a Markdown record beside every still: "Edited, not generated", the sources, and every string on the image. It refuses copy with a dash.
 

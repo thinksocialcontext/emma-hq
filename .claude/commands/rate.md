@@ -5,7 +5,7 @@ argument-hint: "[batch folder, default: newest in ads/batches/]"
 
 The question: is this batch ten different reasons to buy, or one ad wearing ten outfits?
 
-Input: $ARGUMENTS (default: the newest folder in `ads/batches/`). Use every still in its `final/` and the copy in `copy.json`.
+Input: $ARGUMENTS (default: the newest folder in `ads/batches/`). Use every still in its `final/` and the copy in `spec.json` (or `copy.json` in older batches).
 
 ## 1. One image
 ```

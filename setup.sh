@@ -84,17 +84,22 @@ else echo "  .env already exists. Left alone."; fi
 if [[ ! -f memory/MEMORY.md ]]; then mkdir -p memory && cp -n memory-seed/*.md memory/ && echo "  Copied the starter memories into memory/."
 else echo "  memory/ already set up. Left alone."; fi
 mkdir -p "${FOLDERS[@]}"
-chmod +x scripts/hq scripts/ledger scripts/dashboard.py ads/tools/meta_pull.py tests/*.sh 2>/dev/null
+chmod +x scripts/hq scripts/ledger scripts/dashboard.py ads/tools/meta_pull.py ads/tools/build_stills.py ads/tools/fetch_sources.py tests/*.sh 2>/dev/null
 echo "  Folders ready: ${FOLDERS[*]}"
 
-bold "8. Brand fonts for ad stills (Fjalla One and Poppins, free Google Fonts)"
-if ls ads/assets/fonts/*.ttf >/dev/null 2>&1; then echo "  Fonts present."
-elif ask "Download them from the Google Fonts GitHub repository?"; then
+bold "8. Fonts for ad stills (Fjalla One, Poppins, Permanent Marker, Cousine; free Google Fonts)"
+fonts=(ofl/fjallaone/FjallaOne-Regular.ttf ofl/poppins/Poppins-Regular.ttf ofl/poppins/Poppins-Medium.ttf
+  ofl/poppins/Poppins-SemiBold.ttf ofl/poppins/Poppins-Bold.ttf ofl/poppins/Poppins-ExtraBold.ttf
+  apache/permanentmarker/PermanentMarker-Regular.ttf ofl/cousine/Cousine-Regular.ttf ofl/cousine/Cousine-Bold.ttf)
+missing=(); for f in "${fonts[@]}"; do [[ -f "ads/assets/fonts/${f##*/}" ]] || missing+=("$f"); done
+if (( ${#missing[@]} == 0 )); then echo "  Fonts present."
+elif ask "Download ${#missing[@]} font(s) (Fjalla One, Poppins, Permanent Marker, Cousine) from the Google Fonts GitHub repository?"; then
   base=https://raw.githubusercontent.com/google/fonts/main
-  for f in ofl/fjallaone/FjallaOne-Regular.ttf ofl/poppins/Poppins-Regular.ttf ofl/poppins/Poppins-Bold.ttf apache/permanentmarker/PermanentMarker-Regular.ttf; do
-    curl -fsSL "$base/$f" -o "ads/assets/fonts/${f##*/}" && echo "  ${f##*/}"
+  for f in "${missing[@]}"; do
+    curl -fsSL "$base/$f" -o "ads/assets/fonts/${f##*/}" && echo "  ${f##*/}" || echo "  could not fetch ${f##*/}"
   done
-else echo "  Skipped. Stills will use ImageMagick's default font."; fi
+else echo "  Skipped. Stills fall back to other fonts and print a warning."; fi
+have rsvg-convert || echo "  Tip: sudo apt install librsvg2-bin fonts-liberation (SVG logo and receipt font)"
 
 bold "9. Quick self test"
 if bash tests/run.sh >/tmp/emma-hq-tests.log 2>&1; then echo "  All tests passed."

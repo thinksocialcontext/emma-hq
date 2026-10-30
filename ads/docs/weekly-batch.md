@@ -11,7 +11,7 @@ A small steady rhythm beats a big irregular push.
 
 1. **Refresh and read the numbers.** Run `python3 ads/tools/meta_pull.py` (or `--csv` with the owner's export), then read `data/ads.json`, or the dashboard's Weekly launch page: what spent, what won, which F.O.C.U.S. letter is short, how many new ads the spend calls for.
 2. **Draft the experiment card** in `batches/<date>/plan.md`: the focus, the hypothesis, the ads, the budget to ask for.
-3. **Write `copy.json`** with every string, letter, persona and the reason each ad should win.
+3. **Write `spec.json`** with every string, letter, persona, photos and the reason each ad should win. Pick formats from the layout catalogue in `docs/how-to-make-ads.md`, from different families, not used in the last two batches. Start from `batches/examples/2026-10-29/spec.json`.
 4. **Build** with `python3 tools/build_stills.py batches/<date>`.
 5. **Critic gate.** `docs/critic-gate.md`. Fix and rebuild until it passes.
 6. **Rate diversity** with `/rate batches/<date>`.

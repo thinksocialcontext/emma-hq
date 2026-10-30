@@ -1,0 +1,19 @@
+# Public source images for the ads. One per line: file<TAB>what it is<TAB>public URL
+# Files ending .svg go to assets/logo/, the rest to assets/photos/. Fetch with: python3 ads/tools/fetch_sources.py
+logo.svg	Earrings by Emma wordmark, from earringsbyemma.com	https://earringsbyemma.com/cdn/shop/files/Earrings_By_Emma_Logo.svg
+clear-posts.jpg	Clear Plastic Post blanks, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/PlasticPosts_e53869d3-6c4d-407f-8707-7fe758127baa.jpg
+faux-pearl-lifestyle2.jpg	Faux Pearl Studs listing photo, stud worn by a lake	https://cdn.shopify.com/s/files/1/2480/4040/files/Lifestyle02_e404cd89-cc84-4167-8e4e-c7dbcd8d2001.jpg
+petite-diamond-6mm.png	Petite Faux Diamond CZ Studs 6mm, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/petite_faux_diamonds_-_6mm.png
+soccer-ball-photo.jpg	Soccer Ball Studs listing photo, worn	https://cdn.shopify.com/s/files/1/2480/4040/files/CC5CD13A-2229-4F28-BD1E-252802FFE15B.jpg
+soccer-ball-studs.jpg	Soccer Ball Studs 10mm, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/SoccerBallStuds10mm.jpg
+faux-pearl-12mm.jpg	Faux Pearl Studs 12mm, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/faux_pearl_studs_12mm.jpg
+gold-rimmed-glitter-silver.jpg	Gold Rimmed Glitter Studs, silver, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/gold_rimmed_glitter_silver.jpg
+diamond-cut-rhinestone.jpg	Diamond Cut Rhinestone Studs, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/diamond_cut_rhinestone_studs.jpg
+glassy-butterfly.jpg	Glassy Butterfly Studs, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/07Pink_BLue_Yellow.jpg
+gummy-bear-studs-purple.jpg	Gummy Bear Studs, purple, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/06Purple_475d73e4-7720-4236-9962-07d4501d5acc.jpg
+clear-hooks-large.jpg	Clear Plastic Hook blanks, large, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/Large_Hooks.jpg
+moon-cats.jpg	Moon Cats Dangles, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/01Black_2499689e-55ae-42b6-ad23-3d90ee98b89b.jpg
+bendy-pencil-photo.jpg	Bendy Pencil Dangles listing photo, worn	https://cdn.shopify.com/s/files/1/2480/4040/files/324753EA-6081-497A-B413-A1EC3B37D11D.jpg
+bendy-pencil.jpg	Exaggerated Bendy Pencil Dangles, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/Exaggerated_Bendy_Pencil_Dangles.jpg
+infinity-loops.jpg	Infinity Loops Dangles, product photo	https://cdn.shopify.com/s/files/1/2480/4040/files/Infinity_Loops.jpg
+giftcard.jpg	Digital Gift Card listing image	https://cdn.shopify.com/s/files/1/2480/4040/products/image_82e02575-0c2b-4c27-9856-bd8a02a26ded.jpg
