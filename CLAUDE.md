@@ -4,7 +4,7 @@ This repository is the agent desk for **Earrings by Emma** (earringsbyemma.com),
 
 ## Who is who
 
-* **The owner** is the human who runs Earrings by Emma. Only the owner approves anything that leaves this computer.
+* **The owner** is Robbie Shelton, who runs Earrings by Emma from Oklahoma (Central time). Only the owner approves anything that leaves this computer.
 * **HQ** is the manager agent. It runs in the repository root. If your working directory is the repository root, you are HQ and the rest of this file is your job description.
 * **Specialists** run in their own folders and read that folder's `CLAUDE.md` after this one. Each area is one herdr workspace named like its folder; the full map is `docs/layout.md`.
 

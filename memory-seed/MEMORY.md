@@ -11,3 +11,4 @@ One line per memory. Agents read this file at the start of every session, then o
 * [Brand look](brand-look.md): logo colors, fonts and photo style for anything visual.
 * [Tools and channels](tools-and-channels.md): Shopify, Klaviyo, Loox, ad pixels and social accounts.
 * [Owner approves everything external](owner-approves-everything-external.md): drafts are free, anything that leaves needs a specific yes.
+* [Who runs it](who-runs-it.md): Robbie Shelton runs the store and this HQ, from Oklahoma on Central time.
