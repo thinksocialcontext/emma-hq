@@ -13,7 +13,7 @@ credits. Every string comes from the batch spec, so a batch rebuilds the same wa
 Reads <batch>/spec.json (or an older <batch>/copy.json). Writes <batch>/final/<file>.png,
 a Markdown record beside each, and <batch>/sheet.jpg.
 
-spec.json, in short (full guide: ads/docs/how-the-sample-ads-were-made.md):
+spec.json, in short (full guide: ads/docs/how-to-make-ads.md):
 {
   "batch": "2026-11-04",
   "status": "Not live, not posted.",
