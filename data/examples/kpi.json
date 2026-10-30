@@ -1,0 +1,7 @@
+{
+  "note": "SAMPLE. Copy to data/kpi.json and fill in real averages from Shopify. Break even ROAS = average order value / (average order value minus cost per order).",
+  "average_order_value": 40.00,
+  "product_cost_per_order": 8.00,
+  "shipping_cost_per_order": 5.00,
+  "fees_per_order": 1.50
+}

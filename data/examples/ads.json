@@ -1,0 +1,12 @@
+{
+  "note": "SAMPLE numbers to show the layout. The ads agent replaces data/ads.json with real Meta numbers.",
+  "updated": "sample",
+  "spend_7d": 350.00,
+  "purchase_value_7d": 910.00,
+  "ads": [
+    {"name": "Wear earrings again, review card", "focus": "O", "spend_7d": 120.00, "roas_7d": 3.1},
+    {"name": "Titanium still itched, comparison", "focus": "S", "spend_7d": 95.00, "roas_7d": 2.4},
+    {"name": "Daughter's first dangles", "focus": "F", "spend_7d": 80.00, "roas_7d": 2.2},
+    {"name": "Buy 3 get 1 free, holiday stack", "focus": "C", "spend_7d": 55.00, "roas_7d": 1.9}
+  ]
+}

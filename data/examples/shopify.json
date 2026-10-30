@@ -1,0 +1,12 @@
+{
+  "note": "SAMPLE numbers to show the layout. The shopify agent replaces data/shopify.json with real store numbers.",
+  "updated": "sample",
+  "sales_today": 140.00,
+  "sales_7d": 1180.00,
+  "orders_7d": 31,
+  "top_products": [
+    {"title": "Petite Faux Diamond CZ Studs", "units_7d": 14},
+    {"title": "Faux Pearl Studs", "units_7d": 11},
+    {"title": "Glassy Butterfly Studs", "units_7d": 7}
+  ]
+}
