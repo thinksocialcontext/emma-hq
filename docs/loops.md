@@ -10,7 +10,7 @@ The numbers that come back in `data/` feed the next round of research.
 
 | Loop | Rhythm | Command | Who | Ends at |
 | --- | --- | --- | --- | --- |
-| Research to concepts | when a new angle or product needs it | ask HQ | ads | concepts saved, owner picks |
+| Research to concepts | when a new angle or product needs it | ask HQ | ads-research, then ads | concepts saved, owner picks |
 | Weekly ad batch | once a week, fixed launch day | `/batch` then `/rate` | ads | `approvals/<date>-ad-batch.md` |
 | Social week | once a week | `/social-week` | social | `approvals/<date>-social-week.md` |
 | Inbox triage | daily or twice daily | `/triage` | email | drafts waiting in the mail tool |
@@ -20,10 +20,10 @@ The numbers that come back in `data/` feed the next round of research.
 
 ## Research to concepts
 
-1. HQ gives ads a bounded research objective and a stop condition ("find 10 hooks from reviews that mention titanium; stop at 10").
-2. Ads writes findings to `ads/research/` with sources.
+1. HQ gives ads-research (the Research tab in the Ads workspace) a bounded research objective and a stop condition ("find 10 hooks from reviews that mention titanium; stop at 10").
+2. Ads research writes findings to `ads/research/` with sources.
 3. HQ reads them and picks what is useful.
-4. HQ asks ads for concepts from the pick.
+4. HQ hands the pick to ads and asks for concepts.
 5. HQ returns the concepts to the owner with the file path, and asks before anything is built further, published or launched.
 
 ## Weekly ad batch

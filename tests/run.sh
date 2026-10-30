@@ -4,4 +4,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 -m unittest discover -s tests -v
 bash tests/test_hq.sh
+bash tests/test_layout.sh
 bash -n setup.sh && echo "ok  setup.sh parses"

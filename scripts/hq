@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # hq: one set of verbs for the Emma HQ agents, on herdr or on tmux.
 #
-#   hq start                 open the HQ layout (manager, ads, social, shopify, email)
+#   hq start                 open the HQ layout: workspaces HQ, Ads (+ Research tab), Social, Shopify, Email
 #   hq list [--json]         every agent and its state
 #   hq read NAME [LINES]     the last lines of an agent's screen
 #   hq prompt NAME "TEXT"    type a task into an agent and press Enter
@@ -14,7 +14,10 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-AGENTS=(hq ads social shopify email)
+# The layout. One area per folder; docs/layout.md is the human readable version.
+#   agent         folder         herdr workspace / tab
+AGENTS=(hq ads ads-research social shopify email)
+AREAS=(hq ads social shopify email)   # one herdr workspace (or tmux window) each
 SESSION="${HQ_TMUX_SESSION:-emma-hq}"
 AGENT_CMD="${HQ_AGENT_CMD-claude}"
 AGENT_KIND="${HQ_AGENT_KIND:-claude}"
@@ -30,7 +33,20 @@ folder_for() {
   case "$1" in
     hq) echo "$ROOT" ;;
     ads|social|shopify|email) echo "$ROOT/$1" ;;
+    ads-research) echo "$ROOT/ads/research" ;;
     *) die "unknown agent '$1' (expected: ${AGENTS[*]})" ;;
+  esac
+}
+
+label_for() {  # herdr workspace or tab label for an agent
+  case "$1" in
+    hq) echo HQ ;;
+    ads) echo Ads ;;
+    ads-research) echo Research ;;
+    social) echo Social ;;
+    shopify) echo Shopify ;;
+    email) echo Email ;;
+    *) die "unknown agent '$1'" ;;
   esac
 }
 
@@ -70,20 +86,22 @@ t_state() {  # name, prints idle|working|blocked using two snapshots
 
 t_start() {
   command -v tmux >/dev/null 2>&1 || die "tmux is not installed. Run ./setup.sh"
-  if t_has_session; then echo "HQ is already running in tmux session '$SESSION'. Use: scripts/hq attach"; return; fi
-  local first=1 name dir
+  local name dir made=() have=""
+  if t_has_session; then have="$(T list-windows -t "=$SESSION" -F '#{window_name}')"; fi
   for name in "${AGENTS[@]}"; do
-    dir="$(folder_for "$name")"
-    if (( first )); then
+    grep -qx "$name" <<<"$have" && continue
+    dir="$(folder_for "$name")"; mkdir -p "$dir"
+    if ! t_has_session; then
       T new-session -d -s "$SESSION" -n "$name" -c "$dir" -x 220 -y 50
-      first=0
     else
       T new-window -d -t "=$SESSION:" -n "$name" -c "$dir"
     fi
     T set-option -t "=$SESSION:$name" automatic-rename off >/dev/null
     [[ -n "$AGENT_CMD" ]] && T send-keys -t "=$SESSION:$name" -l "$AGENT_CMD" && T send-keys -t "=$SESSION:$name" Enter
+    made+=("$name")
   done
-  echo "HQ started in tmux session '$SESSION' with windows: ${AGENTS[*]}"
+  if (( ${#made[@]} == 0 )); then echo "HQ is already running in tmux session '$SESSION'. Use: scripts/hq attach"; return; fi
+  echo "HQ started in tmux session '$SESSION' with windows: ${made[*]}"
   echo "Look at it with: scripts/hq attach   (switch windows with Ctrl+b then the window number)"
 }
 
@@ -162,33 +180,51 @@ if isinstance(d,dict):
 print(d or "")' "$1" "$2"
 }
 
-h_agent_names() {
-  herdr agent list 2>/dev/null | python3 -c 'import json,sys
-try: d=json.load(sys.stdin)
+h_agents_json() { herdr agent list 2>/dev/null || echo '{}'; }
+
+h_agent_field() {  # h_agent_field '<agent list json>' NAME FIELD -> value or empty
+  python3 -c 'import json,sys
+try: d=json.loads(sys.argv[1])
 except Exception: sys.exit(0)
 items=d.get("result",d) if isinstance(d,dict) else d
 if isinstance(items,dict): items=items.get("agents",[])
 for a in items or []:
-    n=a.get("name") or a.get("agent_name")
-    if n: print(n)'
+    if (a.get("name") or a.get("agent_name"))==sys.argv[2]:
+        print(a.get(sys.argv[3]) or ""); break' "$1" "$2" "$3"
 }
+
+h_has_agent() { [[ -n "$(h_agent_field "$1" "$2" pane_id)$(h_agent_field "$1" "$2" name)" ]]; }
 
 h_start() {
   herdr status server >/dev/null 2>&1 || die "herdr is not running. Open a terminal, run 'herdr', then run scripts/hq start from inside it."
-  if h_agent_names | grep -qx hq; then echo "HQ is already running in herdr. Run: scripts/hq list"; return; fi
-  local reply ws pane name
-  reply="$(herdr workspace create --cwd "$ROOT" --label "Emma HQ" --no-focus)"
-  ws="$(h_json_id "$reply" result.workspace)"; pane="$(h_json_id "$reply" result.root_pane)"
-  [[ -n "$ws" && -n "$pane" ]] || die "could not read the new workspace from herdr: $reply"
-  herdr pane rename "$pane" HQ >/dev/null || true
-  herdr agent start hq --kind "$AGENT_KIND" --pane "$pane" >/dev/null
-  for name in ads social shopify email; do
-    reply="$(herdr tab create --workspace "$ws" --cwd "$ROOT/$name" --label "${name^}" --no-focus)"
-    pane="$(h_json_id "$reply" result.root_pane)"
-    [[ -n "$pane" ]] || die "could not read the new tab for $name: $reply"
+  local agents reply ws pane name dir label made=()
+  agents="$(h_agents_json)"
+  # One workspace per area, labelled like its folder, with the area's agent in the root pane.
+  for name in "${AREAS[@]}"; do
+    h_has_agent "$agents" "$name" && continue
+    dir="$(folder_for "$name")"; label="$(label_for "$name")"; mkdir -p "$dir"
+    reply="$(herdr workspace create --cwd "$dir" --label "$label" --no-focus)"
+    ws="$(h_json_id "$reply" result.workspace)"; pane="$(h_json_id "$reply" result.root_pane)"
+    [[ -n "$ws" && -n "$pane" ]] || die "could not read the new $label workspace from herdr: $reply"
+    herdr pane rename "$pane" "$label" >/dev/null || true
     herdr agent start "$name" --kind "$AGENT_KIND" --pane "$pane" >/dev/null
+    made+=("$name")
   done
-  echo "HQ started in herdr workspace 'Emma HQ' with agents: ${AGENTS[*]}"
+  # Ads has a second tab, Research, like a production desk and a research desk.
+  agents="$(h_agents_json)"
+  if ! h_has_agent "$agents" ads-research; then
+    ws="$(h_agent_field "$agents" ads workspace_id)"
+    [[ -n "$ws" ]] || die "could not find the Ads workspace to add the Research tab"
+    dir="$(folder_for ads-research)"; mkdir -p "$dir"
+    reply="$(herdr tab create --workspace "$ws" --cwd "$dir" --label Research --no-focus)"
+    pane="$(h_json_id "$reply" result.root_pane)"
+    [[ -n "$pane" ]] || die "could not read the new Research tab: $reply"
+    herdr pane rename "$pane" Research >/dev/null || true
+    herdr agent start ads-research --kind "$AGENT_KIND" --pane "$pane" >/dev/null
+    made+=(ads-research)
+  fi
+  if (( ${#made[@]} == 0 )); then echo "HQ is already running in herdr. Run: scripts/hq list"; return; fi
+  echo "HQ started in herdr. Workspaces: HQ, Ads (with a Research tab), Social, Shopify, Email. New agents: ${made[*]}"
 }
 
 h_list() {
@@ -200,7 +236,7 @@ if isinstance(items,dict): items=items.get("agents",[])
 out=[]
 for a in items or []:
     out.append({"name":a.get("name") or a.get("agent_name") or a.get("pane_id",""),
-                "state":a.get("state") or a.get("status") or "unknown",
+                "state":a.get("agent_status") or a.get("state") or a.get("status") or "unknown",
                 "detail":a.get("kind") or a.get("agent") or ""})
 print(json.dumps(out))'
   else

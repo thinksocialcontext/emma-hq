@@ -1,6 +1,6 @@
 # Running the agents side by side: herdr or tmux
 
-Emma HQ runs five Claude Code agents at once: HQ, ads, social, shopify and email. Something has to hold five terminals and let HQ read and type into the others. The kit supports two options and one script, `scripts/hq`, that works the same on both.
+Emma HQ runs six Claude Code agents at once: hq, ads, ads-research, social, shopify and email (the map is `docs/layout.md`). Something has to hold six terminals and let HQ read and type into the others. The kit supports two options and one script, `scripts/hq`, that works the same on both.
 
 ## herdr (recommended)
 
@@ -11,15 +11,15 @@ curl -fsSL https://herdr.dev/install.sh | sh
 herdr integration install claude     # lets herdr see Claude Code's state
 ```
 
-Then open a terminal, run `herdr`, and inside it run `scripts/hq start`. HQ gets a workspace called "Emma HQ" with a tab per agent.
+Then open a terminal, run `herdr`, and inside it run `scripts/hq start`. You get one workspace per area, each rooted at its folder: HQ (the repository root), Ads (`ads/`, with a second tab Research in `ads/research/`), Social (`social/`), Shopify (`shopify/`) and Email (`email/`). Running it again only adds what is missing.
 
 ## tmux (fallback, always works)
 
 tmux comes with Ubuntu. If herdr is not installed, `scripts/hq` uses tmux automatically:
 
 ```
-scripts/hq start      # creates the tmux session "emma-hq", one window per agent
-scripts/hq attach     # look at it; Ctrl+b then 0 to 4 switches agents, Ctrl+b then d leaves it running
+scripts/hq start      # creates the tmux session "emma-hq", one window per agent, named like the agent
+scripts/hq attach     # look at it; Ctrl+b then 0 to 5 switches agents, Ctrl+b then d leaves it running
 ```
 
 On tmux, agent state is a best guess: `working` if the screen is changing, `blocked` if a question or permission dialog is showing, `idle` otherwise.
@@ -30,7 +30,7 @@ To force one or the other: `HQ_BACKEND=tmux scripts/hq start`.
 
 | Command | Does |
 | --- | --- |
-| `scripts/hq start` | open all five agents (safe to run twice) |
+| `scripts/hq start` | open every workspace and agent (safe to run twice) |
 | `scripts/hq list` | each agent and its state |
 | `scripts/hq read ads 80` | the last 80 lines of the ads agent's screen |
 | `scripts/hq prompt ads "..."` | type a task and press Enter (refuses if a dialog or unsent text is showing) |

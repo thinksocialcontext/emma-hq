@@ -1,6 +1,6 @@
 # Emma HQ
 
-**An AI agent desk for Earrings by Emma.** Five Claude Code agents work side by side on your computer: a manager called **HQ**, and four specialists for **ads**, **social**, **Shopify** and **email**. You talk to HQ. HQ hands work to the right specialist, checks it, and brings you only finished work and clear questions.
+**An AI agent desk for Earrings by Emma.** Six Claude Code agents work side by side on your computer: a manager called **HQ**, and specialists for **ads** (with a research partner), **social**, **Shopify** and **email**. Each one has its own workspace and its own folder; `docs/layout.md` shows the map. You talk to HQ. HQ hands work to the right specialist, checks it, and brings you only finished work and clear questions.
 
 Nothing is ever posted, sent, launched, spent or changed in your store without your yes. The agents prepare everything and then ask.
 
@@ -42,7 +42,7 @@ From now on, every command goes in the **Ubuntu** window (Start menu, type Ubunt
 ```
 sudo apt-get update && sudo apt-get install -y git
 cd ~
-git clone <the link ThinkSocial sends you> emma-hq
+git clone https://github.com/thinksocialcontext/emma-hq.git
 cd emma-hq
 ```
 
@@ -84,10 +84,21 @@ Keys only ever go in `.env`. Never paste a key into a chat with an agent.
 scripts/hq start
 ```
 
-This opens five agents: `hq`, `ads`, `social`, `shopify`, `email`.
+This opens one workspace per area, each rooted at its own folder:
 
-* **With herdr:** run `herdr` first, then `scripts/hq start` inside it. You will see a workspace called Emma HQ with a tab per agent.
-* **With tmux:** run `scripts/hq attach` to see them. Press **Ctrl+b** then a number (0 to 4) to switch agents. Press **Ctrl+b** then **d** to step away and leave them running.
+| herdr workspace / tab | Folder | Agent |
+| --- | --- | --- |
+| HQ | `./` | `hq` |
+| Ads | `ads/` | `ads` |
+| Ads / Research | `ads/research/` | `ads-research` |
+| Social | `social/` | `social` |
+| Shopify | `shopify/` | `shopify` |
+| Email | `email/` | `email` |
+
+The full map, with what each agent writes, is in `docs/layout.md`.
+
+* **With herdr:** run `herdr` first, then `scripts/hq start` inside it. You will see five workspaces: HQ, Ads, Social, Shopify and Email. Ads has a second tab called Research.
+* **With tmux:** run `scripts/hq attach` to see them. There is one window per agent. Press **Ctrl+b** then a number (0 to 5) to switch agents. Press **Ctrl+b** then **d** to step away and leave them running.
 
 The first time each agent starts, Claude Code asks whether you trust the folder. Answer yes for each one.
 
@@ -132,18 +143,23 @@ When an agent needs a yes, it writes a file in `approvals/` and the dashboard sh
 
 ### Stopping for the day
 
-Agents can keep running. To close them all (tmux): `scripts/hq stop`. With herdr, close the Emma HQ workspace in herdr.
+Agents can keep running. To close them all (tmux): `scripts/hq stop`. With herdr, close the HQ, Ads, Social, Shopify and Email workspaces in herdr.
 
 ## Keeping your data private
 
 * `.env` (your keys), `memory/`, `work/` (the ledger), `data/`, `approvals/`, reports, email drafts and ad images all stay on your computer and are ignored by git.
-* If you back this folder up to GitHub, make the repository **private**.
+* The kit itself is public. Your copy holds your business: if you back it up to GitHub, push it to a new **private** repository of your own.
 
 ## For the curious
 
+* `docs/layout.md` which workspace works in which folder
 * `docs/memory.md` how agents remember
 * `docs/ledger.md` the work record
 * `docs/loops.md` the repeating jobs
 * `docs/dashboard.md` the dashboard and its numbers
 * `docs/herdr-and-tmux.md` how the agents run side by side
 * `tests/run.sh` the self tests (`bash tests/run.sh`)
+
+## License
+
+MIT, see `LICENSE`. Copyright ThinkSocial.

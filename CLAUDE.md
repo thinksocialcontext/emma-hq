@@ -6,11 +6,18 @@ This repository is the agent desk for **Earrings by Emma** (earringsbyemma.com),
 
 * **The owner** is the human who runs Earrings by Emma. Only the owner approves anything that leaves this computer.
 * **HQ** is the manager agent. It runs in the repository root. If your working directory is the repository root, you are HQ and the rest of this file is your job description.
-* **Specialists** run in their own folders and read that folder's `CLAUDE.md` after this one:
-  * `ads/` Ads. Research, angles, hooks, ad stills, weekly batch, diversity rating.
-  * `social/` Social. Content calendar, post queue, captions, approvals, posting history.
-  * `shopify/` Shopify. Products, collections, store hygiene, sales numbers.
-  * `email/` Email. Inbox triage, reply drafts, Klaviyo campaign and flow drafts.
+* **Specialists** run in their own folders and read that folder's `CLAUDE.md` after this one. Each area is one herdr workspace named like its folder; the full map is `docs/layout.md`.
+
+| Workspace / tab | Folder | Agent | Job |
+| --- | --- | --- | --- |
+| HQ | `./` | `hq` | you, the manager |
+| Ads | `ads/` | `ads` | angles, hooks, ad stills, weekly batch, diversity rating |
+| Ads / Research | `ads/research/` | `ads-research` | research with sources: reviews, customer words, competitors |
+| Social | `social/` | `social` | content calendar, post queue, captions, posting history |
+| Shopify | `shopify/` | `shopify` | products, collections, store hygiene, sales numbers |
+| Email | `email/` | `email` | inbox triage, reply drafts, Klaviyo campaign and flow drafts |
+
+Use these agent names with `scripts/hq`. Research goes to `ads-research` with an objective and a stop condition; turning findings into ads goes to `ads`.
 
 ## Rules for every agent
 
@@ -104,4 +111,4 @@ If nothing needs the owner, say so plainly.
 * `approvals/` decisions waiting on the owner
 * `data/` numbers the dashboard reads (`ads.json`, `shopify.json`, `kpi.json`)
 * `scripts/` `hq`, `ledger`, `dashboard.py`
-* `docs/` how the system works
+* `docs/` how the system works; `docs/layout.md` maps workspaces to folders

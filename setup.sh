@@ -5,9 +5,19 @@
 #   ./setup.sh           check, ask, install what is missing, prepare the folders
 #   ./setup.sh --check   only report what is installed; change nothing
 #   ./setup.sh --yes     answer yes to every install question
+#   ./setup.sh --list-folders   print the folders setup creates (used by the tests)
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
+# Every folder an agent writes into. Matches docs/layout.md; tests/test_layout.sh checks that.
+FOLDERS=(
+  memory work/briefs data reports approvals
+  ads/batches ads/research ads/assets/photos ads/assets/logo ads/assets/fonts
+  social/queue social/posted
+  shopify/snapshots
+  email/triage email/drafts
+)
+[[ "${1:-}" == --list-folders ]] && { printf '%s\n' "${FOLDERS[@]}"; exit 0; }
 cd "$ROOT"
 MODE=ask
 case "${1:-}" in --check) MODE=check ;; --yes) MODE=yes ;; "") ;; *) echo "usage: ./setup.sh [--check|--yes]"; exit 2 ;; esac
@@ -73,9 +83,9 @@ if [[ ! -f .env ]]; then cp .env.example .env && chmod 600 .env && echo "  Creat
 else echo "  .env already exists. Left alone."; fi
 if [[ ! -f memory/MEMORY.md ]]; then mkdir -p memory && cp -n memory-seed/*.md memory/ && echo "  Copied the starter memories into memory/."
 else echo "  memory/ already set up. Left alone."; fi
-mkdir -p work/briefs data email/triage reports
+mkdir -p "${FOLDERS[@]}"
 chmod +x scripts/hq scripts/ledger scripts/dashboard.py tests/*.sh 2>/dev/null
-echo "  work/, data/ and reports/ ready."
+echo "  Folders ready: ${FOLDERS[*]}"
 
 bold "8. Brand fonts for ad stills (Fjalla One and Poppins, free Google Fonts)"
 if ls ads/assets/fonts/*.ttf >/dev/null 2>&1; then echo "  Fonts present."
@@ -92,8 +102,9 @@ else echo "  Some tests failed. See /tmp/emma-hq-tests.log"; fi
 
 bold "Done. Next:"
 cat <<'NEXT'
-  scripts/hq start                  open HQ and the four specialists
+  scripts/hq start                  open the HQ, Ads (and Research), Social, Shopify and Email workspaces
   scripts/hq attach                 look at them (tmux), or use the herdr window
+  docs/layout.md                    which workspace works in which folder
   python3 scripts/dashboard.py      the dashboard at http://localhost:8765
 In the HQ window, try:  /status
 NEXT
